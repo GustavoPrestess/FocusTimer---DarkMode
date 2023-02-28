@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #ffff;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  gap: 15rem;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#clock span {
+  font-size: clamp(4rem, 4rem + 10vw, 8.8rem);
+  font-size: 12.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #323238;
+}
+
+#controls {
+  display: flex;
+  gap: 4.0rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards button {
+  background-color: #E1E1E6;
+  border-radius: 2.4rem;
+  Height: 15.2rem; 
+  width: 13.8rem;
+}
+
+.cards button.active, .cards button:hover {
+  background-color: hsla(194, 97%, 31%, 1);
+}
+
+.cards button.active svg path, .cards button:hover svg path {
+  fill: white;
+}
+
+.modeButton {
+  position: absolute;
+  top: 6.4rem;
+  right: 6.4rem;
+}
+
+button [type='range'] {
+  appearance: none;
+  background: #000000;
+  height: 0.5rem;
+  width: 8rem;
+  border-radius: 10rem;
+  margin-top: 3rem;
+}
+
+button .slider [type='range']::-webkit-slider-thumb {
+  appearance: none;
+  background: rgb(0, 0, 0);
+  width: 1.4rem;
+  height: 1.3rem;
+  border-radius: 9999px;
+}
+
+.cards button .slider input {
+  background-color: rgb(0, 0, 0);
+}
+
+.cards button.active .slider [type='range']::-webkit-slider-thumb, .cards button:hover .slider [type='range']::-webkit-slider-thumb {
+  background-color: rgb(253, 253, 253);
+}
+
+.cards button.active .slider input, .cards button:hover .slider input {
+  background-color: rgb(255, 254, 254);
+}
+
+/* Dark Mode */
+
+body.dark {
+  background-color: #121214;
+}
+
+body.dark button svg path {
+  fill: #ffffff;
+}
+
+body.dark main {
+  color: #ffffff;
+}
+
+body.dark #clock span {
+  color: #ffff;
+}
+
+body.dark .cards button {
+  background: #29292E;
+}
+
+body.dark .cards button.active {
+  background-color: #0A3442;
+}
+
+body.dark .cards button:hover {
+  background-color: #0A3442;
+}
+
+body.dark button [type='range']::-webkit-slider-thumb, body.dark button [type='range'] {
+  background: #ffffff;
+}
+
+/* Responsive */
+
+@media (max-width: 860px) {
+  :root {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 600px){
+  
+  :root {
+    font-size: 45%;
+  }
+  
+  main {
+    display: grid;
+    gap: 6rem;
+    width: 100vw;
+    place-content: center;
+  }
+  .timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards div{
+    place-self: center;
+  }
+}
